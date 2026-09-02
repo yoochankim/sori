@@ -1,0 +1,38 @@
+[package]
+name = "sori-app"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "Local macOS meeting recorder with separate microphone and system-audio tracks"
+license = "MIT"
+
+[lib]
+name = "sori_app"
+path = "src/lib.rs"
+
+[[bin]]
+name = "sori-core"
+path = "src/bin/app.rs"
+
+[[bin]]
+name = "sori-cli"
+path = "src/bin/cli.rs"
+
+[dependencies]
+anyhow = "1"
+chrono = { version = "0.4", features = ["serde"] }
+cidre = { version = "0.15", default-features = false, features = ["av", "cm", "core_audio", "macos_15_0"] }
+cpal = "0.17"
+crossbeam-queue = "0.3.13"
+fs2 = "0.4"
+ringbuf = "0.4.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sori-system-audio-cleanroom = { path = "crates/system-audio" }
+tokio = { version = "1", features = ["rt", "macros", "time", "sync", "net", "io-util"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+[profile.release]
+lto = "thin"
+strip = true

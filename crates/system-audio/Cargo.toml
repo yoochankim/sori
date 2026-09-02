@@ -1,0 +1,19 @@
+[package]
+name = "sori-system-audio-cleanroom"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT"
+description = "Clean-room macOS system-audio capture using documented CoreAudio process taps"
+[dependencies]
+anyhow = "1.0.100"
+libc = "0.2.177"
+objc2 = "0.6.4"
+objc2-core-audio = { version = "0.3.2", default-features = false, features = ["std", "AudioHardware", "HostTime", "libc", "objc2", "objc2-core-audio-types", "objc2-foundation"] }
+objc2-core-audio-types = { version = "0.3.2", default-features = false, features = ["std", "CoreAudioBaseTypes", "bitflags", "objc2"] }
+objc2-core-foundation = { version = "0.3.2", default-features = false, features = ["std", "CFArray", "CFDictionary", "CFNumber", "CFString", "objc2"] }
+objc2-foundation = { version = "0.3.2", default-features = false, features = ["std", "NSArray", "NSObject", "NSObjCRuntime", "NSString", "NSUUID"] }
+[lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+[lints.clippy]
+undocumented_unsafe_blocks = "deny"
