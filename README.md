@@ -40,6 +40,25 @@ sori list
 
 Add `--json` to any command for machine-readable output.
 
+## Use Sori with an AI agent
+
+Sori's CLI can return JSON, so a local AI agent can control recording and verify the result. For example:
+
+> Start a Sori recording. Do not upload or share the audio. When I ask you to stop, wait for finalization and confirm that `meta.json` says `done`.
+
+The agent can use this sequence:
+
+```sh
+sori status --json
+sori start --json
+sori stop --json
+sori list --json
+```
+
+`sori start` returns the new recording folder. `sori stop` returns only after both WAV files and `meta.json` have been finalized. Recordings stay in `~/Sori/recordings` with permissions limited to the current macOS account.
+
+An agent should not start recording without an explicit request. It should not upload, transcribe, or share a recording unless you ask it to do so.
+
 ## Files
 
 Each recording has its own folder:
