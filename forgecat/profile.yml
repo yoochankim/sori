@@ -4,8 +4,8 @@
 name: "@yoochankim/sori"
 description: >-
   Configure an AI agent to operate an installed Sori recorder with explicit
-  recording consent, local audio handling, JSON CLI controls, microphone
-  selection, and completed-file verification.
+  recording consent, local audio handling, JSON CLI controls, completed-file
+  verification, and user-approved handoff to follow-up tools.
 visibility: private
 repository: "https://github.com/yoochankim/sori"
 license: "MIT"
@@ -23,7 +23,8 @@ skills:
   - name: sori-recorder
     path: skills/sori-recorder/SKILL.md
     description: >-
-      Operate the installed Sori macOS recorder through its CLI. Use when the
-      user asks to start or stop recording, check recording status or audio
-      levels, choose a microphone, list recordings, or verify completed Sori
-      files. Do not use for changing Sori source code.
+      Operate the installed Sori macOS recorder and hand a verified recording
+      to a user-approved follow-up workflow. Use when the user asks to start or
+      stop recording, check status or audio levels, choose a microphone, list
+      or verify recordings, or continue work from a Sori recording. This skill
+      does not transcribe audio or change Sori source code.

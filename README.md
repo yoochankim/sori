@@ -59,11 +59,27 @@ sori list --json
 
 `sori start` returns the new recording folder. `sori stop` returns only after both WAV files and `meta.json` have been finalized. Recordings stay in `~/Sori/recordings` with permissions limited to the current macOS account.
 
-An agent should not start recording without an explicit request. It should not upload, transcribe, or share a recording unless you ask it to do so.
+An agent should not start recording without an explicit request. You can request recording and a later action in the same message, but the agent should not infer any action you did not name.
+
+### Continue after recording
+
+Sori produces audio files, not transcripts. Once a recording is finalized, the agent reports its folder and duration. If you have not said what should happen next, it can offer a short choice once: leave the recording untouched, transcribe it, summarize it, or extract decisions and action items.
+
+The follow-up work comes from another skill or tool available to your agent. The Sori profile hands that tool the exact recording folder without granting access to other recordings. If a tool needs to upload audio, the agent should name the service and ask before sending the files unless you already approved it.
+
+Example requests:
+
+> Record this meeting. When I ask you to stop, keep the files local and ask whether I want a transcript or action items.
+
+> Record this meeting. When I ask you to stop, transcribe the completed recording locally and summarize the decisions and action items.
+
+> Show me my recordings and let me choose one. Transcribe only the recording I select.
+
+> Stop the recording and leave the audio untouched.
 
 ### ForgeCat profile
 
-The included `forgecat/profile.yml` packages the Sori agent identity and `sori-recorder` skill together. It assumes that the Sori app and CLI are already installed on the Mac.
+The included `forgecat/profile.yml` packages the Sori agent identity and `sori-recorder` skill together. The profile can offer follow-up options and hand a selected recording to another tool, but it does not include a transcription engine. It assumes that the Sori app and CLI are already installed on the Mac.
 
 ```sh
 forgecat install @yoochankim/sori
