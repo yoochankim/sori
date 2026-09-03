@@ -11,6 +11,10 @@ repository: "https://github.com/yoochankim/sori"
 license: "MIT"
 keywords: [sori, macos, audio, recording]
 
+compatibility:
+  platforms:
+    tested: [cursor, claude-code, codex, openclaw, hermes]
+
 instructions:
   operatingRef: sori-agent
 
