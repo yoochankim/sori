@@ -42,6 +42,8 @@ Add `--json` to any command for machine-readable output.
 
 ## Use Sori with an AI agent
 
+This repository includes an `AGENTS.md` identity and operating guide for AI agents that use Sori.
+
 Sori's CLI can return JSON, so a local AI agent can control recording and verify the result. For example:
 
 > Start a Sori recording. Do not upload or share the audio. When I ask you to stop, wait for finalization and confirm that `meta.json` says `done`.
