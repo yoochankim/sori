@@ -42,7 +42,7 @@ Add `--json` to any command for machine-readable output.
 
 ## Use Sori with an AI agent
 
-This repository includes an `AGENTS.md` identity and operating guide for AI agents that use Sori.
+This repository includes an `AGENTS.md` identity for AI agents that use Sori. The reusable CLI workflow is in [`skills/sori-recorder/SKILL.md`](skills/sori-recorder/SKILL.md).
 
 Sori's CLI can return JSON, so a local AI agent can control recording and verify the result. For example:
 
