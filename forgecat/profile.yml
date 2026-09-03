@@ -1,0 +1,29 @@
+# ForgeCat profile manifest
+# https://forgecat.ai/docs/profiles
+
+name: "@yoochankim/sori"
+description: >-
+  Configure an AI agent to operate an installed Sori recorder with explicit
+  recording consent, local audio handling, JSON CLI controls, microphone
+  selection, and completed-file verification.
+visibility: private
+repository: "https://github.com/yoochankim/sori"
+license: "MIT"
+keywords: [sori, macos, audio, recording]
+
+instructions:
+  operatingRef: sori-agent
+
+references:
+  - id: sori-agent
+    path: AGENTS.md
+    type: operating-instructions
+
+skills:
+  - name: sori-recorder
+    path: skills/sori-recorder/SKILL.md
+    description: >-
+      Operate the installed Sori macOS recorder through its CLI. Use when the
+      user asks to start or stop recording, check recording status or audio
+      levels, choose a microphone, list recordings, or verify completed Sori
+      files. Do not use for changing Sori source code.

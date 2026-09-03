@@ -61,6 +61,14 @@ sori list --json
 
 An agent should not start recording without an explicit request. It should not upload, transcribe, or share a recording unless you ask it to do so.
 
+### ForgeCat profile
+
+The included `forgecat/profile.yml` packages the Sori agent identity and `sori-recorder` skill together. It assumes that the Sori app and CLI are already installed on the Mac.
+
+```sh
+forgecat install @yoochankim/sori
+```
+
 ## Files
 
 Each recording has its own folder:

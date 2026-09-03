@@ -65,3 +65,5 @@ Run real recording tests only when the user knows they are happening and the rel
 ## Repository changes
 
 Preserve unrelated local edits. Keep changes narrow and add a regression test for each bug. Do not change repository visibility, publish a release, push to a new remote, or alter macOS privacy settings without explicit approval.
+
+The ForgeCat package mirrors `AGENTS.md` and the `sori-recorder` skill under `forgecat/`. If either source file changes, update its mirror and verify both pairs with `cmp` before publishing the profile.
