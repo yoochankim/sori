@@ -6,7 +6,7 @@ description: >-
   Configure an AI agent to operate an installed Sori recorder with explicit
   recording consent, local audio handling, JSON CLI controls, completed-file
   verification, and user-approved handoff to follow-up tools.
-visibility: private
+visibility: public
 repository: "https://github.com/yoochankim/sori"
 license: "MIT"
 keywords: [sori, macos, audio, recording]
