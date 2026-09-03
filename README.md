@@ -1,5 +1,7 @@
 # Sori
 
+[![skills.sh](https://skills.sh/b/yoochankim/sori)](https://skills.sh/yoochankim/sori/sori-recorder)
+
 Sori is a local meeting recorder for macOS. It records your microphone and the audio played by your Mac into separate WAV files from a small menu bar app.
 
 ## Use Sori with an AI agent
@@ -11,6 +13,12 @@ forgecat install @yoochankim/sori
 ```
 
 The profile gives an AI agent the Sori identity in [`AGENTS.md`](AGENTS.md) and the CLI workflow in [`skills/sori-recorder/SKILL.md`](skills/sori-recorder/SKILL.md). It can start and stop recording, check audio health, verify completed files, and offer follow-up actions. It does not include a transcription engine.
+
+To install only the recorder skill through [skills.sh](https://skills.sh/yoochankim/sori/sori-recorder):
+
+```sh
+npx skills add yoochankim/sori --skill sori-recorder
+```
 
 For example:
 
